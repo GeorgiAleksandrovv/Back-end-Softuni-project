@@ -1,54 +1,44 @@
-<main>
-  <section id="edit-page">
-    <div class="editSection">
-      <div class="info">
-        <h2>"I've Always Wanted To Use That Spell."</h2>
-      </div>
+<section id="editPage">
+  <form id="editForm"  method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{offer.name}}" />
 
-      <form action="#" method="" class="editForm">
-        <h2>Edit Post</h2>
-        <ul class="noBullet">
-          <li>
-            <label for="title">Name:</label>
-            <input type="text" class="inputFields" id="name" name="" value="" />
-          </li>
-          <li>
-            <label for="key-word">Species:</label>
-            <input
-              type="text"
-              class="inputFields"
-              id="species"
-              name=""
-              value=""
-            />
-          </li>
-          <li>
-            <label for="location">Skin Colour:</label>
-            <input type="text" class="inputFields" id="skin" name="" value="" />
-          </li>
-          <li>
-            <label for="date">Eye Colour:</label>
-            <input type="text" class="inputFields" id="eye" name="" value="" />
-          </li>
-          <li>
-            <label for="image">Creature Image:</label>
-            <input
-              type="text"
-              class="inputFields"
-              id="image"
-              name=""
-              value=""
-            />
-          </li>
-          <li>
-            <label for="description">Description:</label>
-            <textarea id="description" class="inputFields" name=""></textarea>
-          </li>
-          <li id="center-btn">
-            <button id="edit-btn">Edit</button>
-          </li>
-        </ul>
-      </form>
-    </div>
-  </section>
-</main>
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type" value="{{offer.type}}" />
+
+    <label for="production">Year of Production:</label>
+    <input type="number" id="production" name="production" value="{{offer.production}}" />
+
+    <label for="exploitation">Years of Exploitation:</label>
+    <input type="number" id="exploitation" name="exploitation" value="{{offer.exploitation}}" />
+
+    <label for="damages">Damages:</label>
+    <input
+      type="text"
+      id="damages"
+      name="damages"
+      value="{{offer.damages}}"
+    />
+
+    <label for="image">Image:</label>
+    <input
+      type="text"
+      id="image"
+      name="image"
+      value="{{offer.image}}"
+    />
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" value="{{offer.price}}" />
+
+    <label for="description">Description:</label>
+    <input
+      type="text"
+      id="description"
+      name="description"
+      value="{{offer.description}}"
+    />
+
+    <input type="submit" class="edit" value="Edit Offer" />
+  </form>
+</section>

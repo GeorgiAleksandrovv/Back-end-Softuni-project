@@ -2,13 +2,12 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-  firstName: { type: String, require: true },
-  lastName: { type: String, require: true },
-  email: { type: String, require: true, unique: true },
-  password: { type: String, require: true },
+  username: { type: String, require: true, minLength: 3, },
+  email: { type: String, require: true, unique: true, minLength: 10, },
+  password: { type: String, require: true, minLength: 4,},
 });
 
-userSchema.virtual("repeatPassword").set(function (value) {
+userSchema.virtual("rePassword").set(function (value) {
   if (value !== this.password) {
     throw new Error("Password missmatch!");
   }

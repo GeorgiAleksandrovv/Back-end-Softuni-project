@@ -3,58 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
-
-    <!-- Do not forget to change the path to the css file -->
-    <link href="/css/style.css" type="text/css" rel="stylesheet">
+    <title>Second Hand Electronics</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
+    <!-- In case of error, you should display div with class "errorContainer" -->
+    <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
 
-
-    <div id="box">
-
-        <!-- In case of error, you should display div with class "error-container" -->
-        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
-        <!--
-        <div class="error-container">
+    <!-- <div>
+        <div class="errorContainer">
             <p>Error</p>
-        </div>-->
+        </div>
+    </div> -->
 
+    <div id="container">
 
         <nav>
-            <!-- Do not forget to change the path to the image -->
-            <img src="/img/logo.png" alt="logo">
-
-            <ul class="menu">
+            <ul>
+                <!--For all users-->
                 <li><a href="/">Home</a></li>
-                <li><a href="#">All Posts</a></li>
-                <!-- Logged users -->
+                <li><a href="/catalogs/catalog">Catalog</a></li>
+                <!--For loggin users-->
                 {{#if isAuthenticated}}
-                <li><a href="#">Create Post</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="/users/logout">Logout</a></li>
-                {{else}}
-                <!-- Guest users -->
-                <li><a href="/users/register">Register</a></li>
-                <li><a href="/users/login">Login</a></li>
+                <li><a href="/catalogs/create">Create Offer</a></li>
+                <li><a href="/catalogs/search">Search</a></li>
+                <li><a href="users/logout">Logout</a></li>
+                {{else}} 
+                <!--For guest user-->
+                <li><a href="users/login">Login</a></li>
+                <li><a href="users/register">Register</a></li>
                 {{/if}}
+
             </ul>
 
         </nav>
-
-      {{#each errorMessages}}
-     <div class="error-container">
+            {{#each errorMessages}}
+        <div class="errorContainer">
             <p>{{this}}</p>
         </div>
-       {{/each}}
+        {{/each}}
 
        {{{body}}}
 
-
-        <footer>
-            © JS Back-End Exam 2023
-        </footer>
+        <footer>@SoftUni - JS Back-End - Second Hand Electronics 2023</footer>
     </div>
 
 </body>
